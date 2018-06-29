@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       <title>Virtual Hub</title>
+
+    </head>
+
+    <body>
+
+      <ul style="margin-top:10px;" class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'base' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Tournaments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Round</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Predict</a>
+        </li>
+      </ul>
+
+<center>
+<div style="padding:48px;" class="jumbotron">
+  <a class="nav-link active" href="{% url 'base' %}">
+    <h1 class="display-4">Virtual HUB</h1>
+  </a>
+  <p class="lead">
+    Welcome to the Hub. Our focus is on Streamlined Sports Analytics
+  </p>
+</div>
+</center>
+      <div class="container">
+
+            {% block content %}
+            {% endblock %}
+
+            <hr class="my-4">
+
+            <footer style="margin:30px" class="text-muted">
+              <center>
+              <div class="container">
+                <h3>Exploring the Bigger Picture</h3>
+                <p>We are passionate about what we do daily. And inspire and reach millions of users.</p>
+                <p>For Developers <a href="#">Visit our API</a> or read our <a href="#">getting started guide</a>.</p>
+              </div>
+            </center>
+            </footer>
+      </div
+
+    </body>
+</html>

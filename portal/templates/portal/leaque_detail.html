@@ -1,0 +1,25 @@
+{% extends "portal/space.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url 'base' %}">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Leaque</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Week</li>
+</ol>
+</nav>
+
+<ul class="list-group">
+<div class="row" >
+  {% for wid in w %}
+    <div style="padding:6px; border:1px;" class="col-3 card">
+      <li class="list-group-item">
+        <center><a style="color:#234;" href={% url 'match_detail' pk=wid.id %}>
+          Week {{ wid.position }}</a></center></li>
+
+  </div>
+  <hr>
+  {% endfor %}
+  </div>
+
+{% endblock %}

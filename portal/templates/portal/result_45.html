@@ -1,0 +1,67 @@
+{% extends "portal/space.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'base' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Match</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Over 4.5</li>
+  </ol>
+</nav>
+
+<table class="table table-sm table-striped">
+  <caption>Page {{ users.number }} of {{ users.paginator.num_pages }}</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Home</th>
+        <th scope="col">Score</th>
+        <th scope="col">Away</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.id}}</td>
+          <td>{{ user.home}}</td>
+          <td>{{ user.score }}</td>
+          <td>{{ user.away }}</td>
+          <td>
+            {% if "3-2" in user.score or "2-3" in user.score or  "4-1" in user.score or "3-3" in user.score or  "1-4" in user.score or "5-0" in user.score or  "4-2" in user.score or "6-0" in user.score or  "5-1" in user.score or "2-4" in user.score or  "0-5" in user.score or "1-5" in user.score or  "0-6" in user.score  %}
+            <div class="alert alert-danger" role="alert">
+              over 4.5
+            </div>
+            {% else %}
+            <div class="alert alert-success" role="alert">
+              PASS
+            </div>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if users.has_other_pages %}
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      {% if users.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ users.previous_page_number }}">Previous</a></li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link" >Previous</span></li>
+      {% endif %}
+      {% for i in users.paginator.page_range %}
+        {% if users.number == i %}
+          <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% endif %}
+      {% endfor %}
+      {% if users.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ users.next_page_number }}">Next</a></li>
+      {% else %}
+        <li class="page-item disabled" ><span class="page-link" >Next</span></li>
+      {% endif %}
+    </ul></nav>
+  {% endif %}
+
+{% endblock %}

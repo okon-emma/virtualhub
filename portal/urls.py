@@ -1,0 +1,52 @@
+from django.conf.urls import	url
+from . import views
+
+urlpatterns = [
+    url(r'^$',	views.base,	name='base'),
+    url(r'^leaque_detail/(?P<pk>\d+)/$',	views.leaque_detail,	name='leaque_detail'),
+    url(r'^match_detail/(?P<pk>\d+)/$',	views.match_detail,	name='match_detail'),
+
+    #urls for 1.5
+    url(r'^che_15/',	views.che_15,	name='che_15'),
+    url(r'^ars_15/',	views.ars_15,	name='ars_15'),
+    url(r'^liv_15/',	views.liv_15,	name='liv_15'),
+    url(r'^mnu_15/',	views.mnu_15,	name='mnu_15'),
+    url(r'^mnc_15/',	views.mnc_15,	name='mnc_15'),
+    url(r'^eve_15/',	views.eve_15,	name='eve_15'),
+    url(r'^tot_15/',	views.tot_15,	name='tot_15'),
+    url(r'^lei_15/',	views.lei_15,	name='lei_15'),
+    url(r'^bri_15/',	views.bri_15,	name='bri_15'),
+    url(r'^wat_15/',	views.wat_15,	name='wat_15'),
+    url(r'^whu_15/',	views.whu_15,	name='whu_15'),
+    url(r'^stc_15/',	views.stc_15,	name='stc_15'),
+    url(r'^hud_15/',	views.hud_15,	name='hud_15'),
+    url(r'^bur_15/',	views.bur_15,	name='bur_15'),
+    url(r'^cry_15/',	views.cry_15,	name='cry_15'),
+    url(r'^sou_15/',	views.sou_15,	name='sou_15'),
+    url(r'^wba_15/',	views.wba_15,	name='wba_15'),
+    url(r'^bou_15/',	views.bou_15,	name='bou_15'),
+    url(r'^nwc_15/',	views.nwc_15,	name='nwc_15'),
+    url(r'^swa_15/',	views.swa_15,	name='swa_15'),
+
+    #urls for 4.5
+    url(r'^che_45/',	views.che_45,	name='che_45'),
+    url(r'^ars_45/',	views.ars_45,	name='ars_45'),
+    url(r'^liv_45/',	views.liv_45,	name='liv_45'),
+    url(r'^mnu_45/',	views.mnu_45,	name='mnu_45'),
+    url(r'^mnc_45/',	views.mnc_45,	name='mnc_45'),
+    url(r'^eve_45/',	views.eve_45,	name='eve_45'),
+    url(r'^tot_45/',	views.tot_45,	name='tot_45'),
+    url(r'^lei_45/',	views.lei_45,	name='lei_45'),
+    url(r'^bri_45/',	views.bri_45,	name='bri_45'),
+    url(r'^wat_45/',	views.wat_45,	name='wat_45'),
+    url(r'^whu_45/',	views.whu_45,	name='whu_45'),
+    url(r'^stc_45/',	views.stc_45,	name='stc_45'),
+    url(r'^hud_45/',	views.hud_45,	name='hud_45'),
+    url(r'^bur_45/',	views.bur_45,	name='bur_45'),
+    url(r'^cry_45/',	views.cry_45,	name='cry_45'),
+    url(r'^sou_45/',	views.sou_45,	name='sou_45'),
+    url(r'^wba_45/',	views.wba_45,	name='wba_45'),
+    url(r'^bou_45/',	views.bou_45,	name='bou_45'),
+    url(r'^nwc_45/',	views.nwc_45,	name='nwc_45'),
+    url(r'^swa_45/',	views.swa_45,	name='swa_45'),
+]

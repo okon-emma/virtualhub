@@ -1,0 +1,34 @@
+{% extends "portal/space.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url 'base' %}">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Leaque</a></li>
+  <li class="breadcrumb-item"><a href="#">Week</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Match</li>
+</ol>
+</nav>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Home</th>
+      <th scope="col">Score</th>
+      <th scope="col">Away</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for mid in m %}
+    <tr>
+      <th scope="row">{{ mid.id }}</th>
+      <td>{{ mid.home }}</td>
+      <td>{{ mid.score }}</td>
+      <td>{{ mid.away }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

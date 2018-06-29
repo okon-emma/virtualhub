@@ -1,0 +1,306 @@
+{% extends "portal/space.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-sm">
+      <form action="" method="get">
+        <div class="form-group">
+          <label>Leaque</label>
+          <input type="text" name="leaque" class="form-control" aria-describedby="leaqueHelp" placeholder="Enter Leaque id">
+          <small id="leaqueHelp" class="form-text text-muted">Example: SOUWAT</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Search Leaques</button>
+      </form>
+    </div>
+
+    <div class="col-sm">
+      <form action="" method="get">
+        <div class="form-group">
+          <label>Match</label>
+          <input type="text" name="match" class="form-control" aria-describedby="matchHelp" placeholder="Enter Match id">
+          <small id="matchHelp" class="form-text text-muted">Example: ARSCHE</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Search Matches</button>
+      </form>
+    </div>
+
+  </div>
+
+{% for l in leaque %}
+<div style="margin-top:16px;" class="alert alert-success" role="alert">
+  <a href={% url 'leaque_detail' pk=l.id %}>Leaque Exists -- id:{{ l.leaque_id }}</a>
+</div>
+{% endfor %}
+
+{% for f in filter %}
+<div style="margin-top:16px;" class="alert alert-success" role="alert">
+  <div class="row">
+    <div class="col">
+      <center>{{f.home}}</center>
+    </div>
+    <div style="font-size:20px;" class="col">
+      <center><strong>{{f.score}}</strong></center>
+    </div>
+    <div class="col">
+      <center>{{f.away}}</center>
+    </div>
+
+  </div>
+</div>
+{% endfor %}
+
+
+
+{% if "" in error %}
+<div style="margin-top:16px;" class="alert alert-warning" role="alert">
+  {{error}}
+</div>
+{% else %}
+
+{% endif %}
+
+
+<div style="margin-top:36px;">
+<center><h5>Under 1.5 | Tiger</h5></center>
+</div>
+
+
+<div  class="row">
+
+  <div class="col-sm-3">
+    <div class="list-group">
+      <a class="list-group-item list-group-item-secondary" href="{% url 'mnu_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Man United</span></a>
+      <a class="list-group-item list-group-item-secondary" href="{% url 'che_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Chelsea</span></a>
+      <a class="list-group-item list-group-item-secondary" href="{% url 'mnc_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Man City</span></a>
+      <a class="list-group-item list-group-item-secondary" href="{% url 'liv_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Liverpool</span></a>
+      <a class="list-group-item list-group-item-secondary" href="{% url 'ars_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Arsenal</span></a>
+    <p></p>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <a  class="list-group-item list-group-item-secondary" href="{% url 'tot_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Tottenham</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'stc_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Stoke City</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'whu_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">West Ham United</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'eve_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Everton</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'lei_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Leicester City</span></a>
+    <p></p>
+  </div>
+
+  <div class="col-sm-3">
+    <a class="list-group-item list-group-item-secondary" href="{% url 'nwc_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">NewCastle</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'sou_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Southampton</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'cry_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Crystal Palace</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'swa_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Swansea City</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'wba_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">West Bromwich</span></a>
+    <p></p>
+  </div>
+
+  <div class="col-sm-3">
+    <a class="list-group-item list-group-item-secondary" href="{% url 'bou_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Bournemouth</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'bur_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Burnley</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'wat_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Watford</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'hud_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Huddersfield</span></a>
+    <a class="list-group-item list-group-item-secondary" href="{% url 'bri_15' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Brighton</span></a>
+    <p></p>
+  </div>
+
+</div>
+
+
+
+<!--
+<div style="margin-top:36px;">
+<center ><h5 >Over 4.5 | Zebra</h5></center>
+</div>
+
+<div  class="row">
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Manchester</h6>
+        <a href="{% url 'mnu_45' %}" class="btn btn-secondary btn-sm">mnu</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Chelsea</h6>
+        <a href="{% url 'che_45' %}" class="btn btn-secondary btn-sm">che</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Mancity</h6>
+        <a href="{% url 'mnc_45' %}" class="btn btn-secondary btn-sm">mnc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Liverpool</h6>
+        <a href="{% url 'liv_45' %}" class="btn btn-secondary btn-sm">liv</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Arsenal</h6>
+        <a href="{% url 'ars_45' %}" class="btn btn-secondary btn-sm">ars</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Tottenham</h6>
+        <a href="{% url 'tot_45' %}" class="btn btn-secondary btn-sm">tot</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Stokecity</h6>
+        <a href="{% url 'stc_45' %}" class="btn btn-secondary btn-sm">stc</a>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">WestHam</h6>
+          <a href="{% url 'whu_45' %}" class="btn btn-secondary btn-sm">whu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Everton</h6>
+          <a href="{% url 'eve_45' %}" class="btn btn-secondary btn-sm">eve</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Leicester</h6>
+          <a href="{% url 'lei_45' %}" class="btn btn-secondary btn-sm">lei</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Newcastle</h6>
+        <a href="{% url 'nwc_45' %}" class="btn btn-secondary btn-sm">nwc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Crystal</h6>
+        <a href="{% url 'cry_45' %}" class="btn btn-secondary btn-sm">cry</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Southampton</h6>
+        <a href="{% url 'sou_45' %}" class="btn btn-secondary btn-sm">sou</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">WestBrom</h6>
+        <a href="{% url 'wba_45' %}" class="btn btn-secondary btn-sm">wba</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Bournemouth</h6>
+        <a href="{% url 'bou_45' %}" class="btn btn-secondary btn-sm">bou</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Swansea</h6>
+        <a href="{% url 'swa_45' %}" class="btn btn-secondary btn-sm">swa</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Burnley</h6>
+        <a href="{% url 'bur_45' %}" class="btn btn-secondary btn-sm">bur</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Watford</h6>
+        <a href="{% url 'wat_45' %}" class="btn btn-secondary btn-sm">wat</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Hudders</h6>
+        <a href="{% url 'hud_45' %}" class="btn btn-secondary btn-sm">hud</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Brighton</h6>
+        <a href="{% url 'bri_45' %}" class="btn btn-secondary btn-sm">bri</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+-->
+
+{% endblock %}
